@@ -3,82 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Technologies</title>
+    <title>Delivering Custom Fonts via Web Server</title>
+    
+    <!-- Import Dancing Script Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to right, #B3E5FC, #FFF3E0); /* Light Sky Blue & Soft Beige */
             color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 20px;
+            margin: 0;
         }
-        main {
-            padding: 2em;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
         }
-        section {
-            margin-bottom: 2em;
+
+        h1 {
+            color: #0277BD; /* Deep Blue */
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
+
         h2 {
-            color: #4CAF50;
+            color: #5D4037; /* Warm Brown */
+            font-size: 2.5em;
+            margin-top: 25px;
         }
-        code {
-            background-color: #e0e0e0;
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        pre {
+            background: #E3F2FD; /* Soft Blue */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1em;
+            font-family: monospace;
+            color: #37474F; /* Dark Grey */
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* Style for last modified date to appear in black */
+        #lastModified {
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            p {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Web Technologies</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Frontend Technologies</h2>
-            <ul>
-                <li><code>HTML</code> - HyperText Markup Language</li>
-                <li><code>CSS</code> - Cascading Style Sheets</li>
-                <li><code>JavaScript</code> - Programming language for the web</li>
-                <li><code>React</code> - JavaScript library for building user interfaces</li>
-                <li><code>Vue.js</code> - Progressive JavaScript framework</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Backend Technologies</h2>
-            <ul>
-                <li><code>Node.js</code> - JavaScript runtime built on Chrome's V8 JavaScript engine</li>
-                <li><code>Express</code> - Web application framework for Node.js</li>
-                <li><code>Python</code> - High-level programming language</li>
-                <li><code>Django</code> - High-level Python web framework</li>
-                <li><code>Ruby on Rails</code> - Web application framework written in Ruby</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Database Technologies</h2>
-            <ul>
-                <li><code>MySQL</code> - Open-source relational database management system</li>
-                <li><code>PostgreSQL</code> - Open-source relational database system</li>
-                <li><code>MongoDB</code> - NoSQL database</li>
-                <li><code>Firebase</code> - Backend-as-a-Service (BaaS) platform</li>
-                <li><code>SQLite</code> - Embedded database system</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Other Technologies</h2>
-            <ul>
-                <li><code>Git</code> - Version control system</li>
-                <li><code>Docker</code> - Containerization platform</li>
-                <li><code>GraphQL</code> - Query language for APIs</li>
-                <li><code>REST</code> - Representational State Transfer, an architectural style for APIs</li>
-                <li><code>JSON</code> - JavaScript Object Notation, a lightweight data-interchange format</li>
-            </ul>
-        </section>
-    </main>
+
+    <div class="container">
+        <h1>Delivering Custom Fonts via Web Server</h1>
+
+        <h2>What is Font Delivery?</h2>
+        <p>
+            When a browser loads a webpage, it typically uses fonts installed on the user's device. However, if a web designer wants to use a custom font that isn't installed on most systems, it must be delivered to the client via a web server.
+        </p>
+
+        <h2>How to Serve a Custom Font</h2>
+        <p>
+            One of the most effective methods for delivering a custom font is by using the <strong>@font-face</strong> rule in CSS. The font file (typically in WOFF or WOFF2 format) is stored on the server, and the CSS references the file so that the browser can download and apply it.
+        </p>
+
+        <h2>Steps to Implement @font-face</h2>
+        <p>
+            1. Choose a custom font and download it in WOFF/WOFF2 format.<br>
+            2. Upload the font file to your web server.<br>
+            3. Use the @font-face rule in your CSS to define the font source.<br>
+            4. Apply the font-family property to your text elements.<br>
+        </p>
+    </div>
+
+    <footer>
+        <p>
+            <span style="color: black; font-weight: bold;">Last updated:</span>
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+
 </body>
 </html>
